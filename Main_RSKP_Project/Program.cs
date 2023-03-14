@@ -8,6 +8,7 @@ namespace Main_RSKP_Project
         {
             Console.WriteLine($"Введите число: {Console.ReadLine()}");
             Console.WriteLine("Кек");
+            Console.WriteLine("EEE");
         }
     }
 }
