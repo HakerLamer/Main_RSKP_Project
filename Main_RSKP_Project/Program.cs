@@ -7,6 +7,7 @@ namespace Main_RSKP_Project
         static void Main(string[] args)
         {
             Console.WriteLine($"Введите число: {Console.ReadLine()}");
+            Console.WriteLine("Кек");
         }
     }
 }

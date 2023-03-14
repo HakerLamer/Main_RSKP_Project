@@ -13,5 +13,6 @@ namespace Main_RSKP_Project
     internal class Rofl_clone
     {
         public string neher;
+        public string hui;
     }
 }
