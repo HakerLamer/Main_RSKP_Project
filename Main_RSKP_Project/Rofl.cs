@@ -10,4 +10,8 @@ namespace Main_RSKP_Project
     {
         public string her;
     }
+    internal class Rofl_clone
+    {
+        public string neher;
+    }
 }
