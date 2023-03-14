@@ -9,6 +9,5 @@ namespace Main_RSKP_Project
     internal class Rofl
     {
         public string her;
-        public string no;
     }
 }
