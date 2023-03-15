@@ -12,7 +12,7 @@ namespace Main_RSKP_Project
             string aret = "wew";
             int A = 1;
             Console.WriteLine("Hello World!");
-            Console.WriteLine("Тема лох!")
+            Console.WriteLine("Тема лох!");
         }
     }
 }
