@@ -9,7 +9,7 @@ namespace Main_RSKP_Project
             Console.WriteLine($"Введите число: {Console.ReadLine()}");
             Console.WriteLine("Кек");
             Console.WriteLine("EEE");
-            string aret = "wew";
+           string aret = "wew";
             int A = 1;
             Console.WriteLine("Hello World!");
             Console.WriteLine("Тема лох!");
