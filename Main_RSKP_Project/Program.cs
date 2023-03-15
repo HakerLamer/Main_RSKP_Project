@@ -1,16 +1,19 @@
 ﻿using System;
-
+using System.Net;
+using System.Diagnostics;
 namespace Main_RSKP_Project
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine($"Введите число: {Console.ReadLine()}");
-            Console.WriteLine("Кек");
-            Console.WriteLine("EEE");
-           string aret = "wew";
-           
+            string path = @"D:\xampp\htdocs\laba2\third.php";
+            Process.Start(
+            new ProcessStartInfo(path) 
+            { 
+                UseShellExecute = true 
+            }
+            );
         }
     }
 }
