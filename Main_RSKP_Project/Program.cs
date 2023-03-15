@@ -10,6 +10,7 @@ namespace Main_RSKP_Project
             Console.WriteLine("Кек");
             Console.WriteLine("EEE");
            string aret = "wew";
+            int A = 1;
            
         }
     }
