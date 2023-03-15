@@ -6,14 +6,7 @@ namespace Main_RSKP_Project
     {
         static void Main(string[] args)
         {
-            Console.WriteLine($"Введите число: {Console.ReadLine()}");
-            Console.WriteLine("Кек");
-            Console.WriteLine("EEE");
-           string aret = "wew";
-            int A = 1;
-            Console.WriteLine("Hello Worl!");
-            Console.WriteLine("Redbull");
-            Console.WriteLine("Хуй сосите все!");
+            Console.WriteLine("SSSSSSSSSSSSSS");
         }
     }
 }
