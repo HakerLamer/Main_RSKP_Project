@@ -6,7 +6,7 @@ namespace Main_RSKP_Project
     {
         static void Main(string[] args)
         {
-            int a = 0  ;
+            int a = 14 ;
             Console.WriteLine("SSSSSSSSSSSSSS");
         }
     }
