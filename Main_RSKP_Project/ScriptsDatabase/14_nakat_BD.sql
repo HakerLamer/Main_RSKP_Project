@@ -21,7 +21,7 @@ INSERT INTO Table_Team (Members, Status, Discipline) VALUES ('Kiselev', 'Member'
 INSERT INTO Table_Team (Members, Status, Discipline) VALUES ('Grishenko', 'Member', 'Backend')
 GO
 
-ALTER PROCEDURE Output_test
+CREATE PROCEDURE Output_test
 @Text NVARCHAR(50) NULL AS
 SELECT * FROM Table_Team
 WHERE Members = @Text OR Status = @Text OR Discipline = @Text;
