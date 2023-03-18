@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Здесь регистрация, баклажан</title>
+    <style type="text/css">
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+            input[type="submit"] {
+                background-color: #4CAF50;
+                color: #fff;
+                cursor: pointer;
+            }
+
+                input[type="submit"]:hover {
+                    background-color: #3e8e41;
+                }
+
+        div {
+            width: 200px;
+            height: 250px; /* Размеры */
+            background: #B0E0E6; /* Цвет фона */
+            outline: 2px solid #000; /* Чёрная рамка */
+            border: 3px solid #fff; /* Белая рамка */
+            border-radius: 10px; /* Радиус скругления */
+            margin: auto; /* Выравнвани по центру */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <form method="post" action="register.php">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+            <label for="password">Пароль:</label>
+            <input type="password" name="password" id="password" required>
+            <input type="submit" value="Зарегистрироваться">
+        </form>
+    </div>
+</body>
+</html>
