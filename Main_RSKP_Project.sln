@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Main_RSKP_Project", "Main_RSKP_Project\Main_RSKP_Project.csproj", "{CB4AF083-F300-4494-95A5-E90A54E0E1EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSocial", "WebSocial\WebSocial.csproj", "{613F0626-CFE7-4078-BAEB-27AB34498611}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSocial", "WebSocial\WebSocial.csproj", "{613F0626-CFE7-4078-BAEB-27AB34498611}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
