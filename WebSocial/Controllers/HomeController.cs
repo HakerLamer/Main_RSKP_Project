@@ -16,7 +16,7 @@ namespace WebSocial.Controllers
         {
             string input="";
             
-            string connectionString = Properties.Resources.ConnectBd;
+            string connectionString = Properties.Resources.ConnectBD;
             string sqlExpression = "Output_test";
             Console.WriteLine("Write Data");
 

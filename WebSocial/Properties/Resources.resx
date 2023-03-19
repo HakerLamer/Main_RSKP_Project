@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="ConnectBd" xml:space="preserve">
+  <data name="ConnectBD" xml:space="preserve">
     <value>Data Source=localhost;Initial Catalog=VladBase;Integrated Security=True;User ID=sa;Password=Qwerty123456</value>
   </data>
 </root>

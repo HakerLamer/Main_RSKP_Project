@@ -63,9 +63,9 @@ namespace WebSocial.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Data Source=localhost;Initial Catalog=VladBase;Integrated Security=True;User ID=sa;Password=Qwerty123456.
         /// </summary>
-        internal static string ConnectBd {
+        internal static string ConnectBD {
             get {
-                return ResourceManager.GetString("ConnectBd", resourceCulture);
+                return ResourceManager.GetString("ConnectBD", resourceCulture);
             }
         }
     }
