@@ -38,11 +38,6 @@ namespace DataConnect.Repositories
             throw new NotImplementedException();
         }
 
-        public Task<List<AccountWS>> Select()
-        {
-            return _db.AllAcc.ToListAsync();
-        }
-
         IEnumerable<AccountWS> IBaseRepository<AccountWS>.Select()
         {
             throw new NotImplementedException();
