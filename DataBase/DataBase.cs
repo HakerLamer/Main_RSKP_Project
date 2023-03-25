@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataConnect.Properties;
-using Microsoft.EntityFrameworkCore;
 using Wisend.Domain.Models;
 
 namespace Wisend.Domain.DataSQL
@@ -16,8 +15,6 @@ namespace Wisend.Domain.DataSQL
         {
 
         }
-
-        public List<AccountWS> AllAcc { get; set; }
         public List<AccountWS> GetAccount()
         {
             string connectionString = VladBase.ConnectionString;
