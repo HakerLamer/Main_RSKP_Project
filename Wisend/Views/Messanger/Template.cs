@@ -24,7 +24,47 @@ public partial class Template : TemplateBase
 
 public override void Execute()
 {
-WriteLiteral("\n");
+
+#line 1 "Template.cshtml"
+  
+    ViewBag.Title = "Messanger";
+
+
+#line default
+#line hidden
+WriteLiteral("\n<h2>");
+
+
+#line 4 "Template.cshtml"
+Write(ViewBag.Title);
+
+
+#line default
+#line hidden
+WriteLiteral(".</h2>\n<h3>");
+
+
+#line 5 "Template.cshtml"
+Write(ViewBag.Message);
+
+
+#line default
+#line hidden
+WriteLiteral("</h3>\n\n<address>\n    One Microsoft Way<br />\n    Redmond, WA 98052-6399<br />\n   " +
+" <abbr");
+
+WriteLiteral(" title=\"Phone\"");
+
+WriteLiteral(">P:</abbr>\n    425.555.0100\n</address>\n\n<address>\n    <strong>Support:</strong>  " +
+" <a");
+
+WriteLiteral(" href=\"mailto:Support@example.com\"");
+
+WriteLiteral(">Support@example.com</a><br />\n    <strong>Marketing:</strong> <a");
+
+WriteLiteral(" href=\"mailto:Marketing@example.com\"");
+
+WriteLiteral(">Marketing@example.com</a>\n</address>");
 
 }
 }
