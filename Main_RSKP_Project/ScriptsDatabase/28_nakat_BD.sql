@@ -34,10 +34,10 @@ CREATE PROCEDURE CheckAccountExistsReg
 	@Password VARCHAR(50)
 AS
 BEGIN
-    --Check if there is an account with the specified name
-    IF EXISTS(SELECT * FROM Table_users WHERE Login = @Login)
+    -- Check if there is an account with the specified name
+    IF EXISTS(SELECT * FROM Table_users WHERE Login = @Login OR Mail = @Mail OR Phone_number = @Phone_number)
     BEGIN
-        --If exists, return an empty result
+        -- If exists, return an empty result
 		SELECT NULL;
     END
     ELSE
@@ -48,7 +48,7 @@ BEGIN
 END
 GO
 
---The procedure responsible for logging.
+-- The procedure responsible for logging.
 CREATE PROCEDURE CheckAccountExistsLog
     @accountName VARCHAR(50)
 AS
@@ -61,18 +61,17 @@ BEGIN
 	--We update the last entry date.
 		UPDATE Table_users
 		SET Last_date = GETDATE();
-        --  Returning a string with information about the found account
+        -- Returning a string with information about the found account
         SELECT * FROM Table_users WHERE Login = @accountName;
     END
     ELSE
     BEGIN
-        --If the account is not found, we return an empty result
+      -- If the account is not found, we return an empty result
         SELECT NULL;
     END
 END
 GO
-
---The procedure responsible for updating the mail, phone number or password.
+-- The procedure responsible for updating the mail, phone number or password.
 CREATE PROCEDURE UpdateUserInfo
     @UserID VARCHAR(50),
     @Mail VARCHAR(50) = NULL,
@@ -94,10 +93,7 @@ CREATE PROCEDURE Deleteuser
 	@UserID VARCHAR(50) 
 AS
 BEGIN
-	IF EXISTS(SELECT * FROM Table_users WHERE ID = @UserID)
-	BEGIN
-		DELETE Table_users;
-	END
+		DELETE FROM Table_users 
+		WHERE ID = @UserID;
 END
 GO
-
