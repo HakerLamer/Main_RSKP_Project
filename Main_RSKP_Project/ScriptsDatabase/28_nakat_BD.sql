@@ -97,4 +97,3 @@ BEGIN
 		WHERE ID = @UserID;
 END
 GO
-
