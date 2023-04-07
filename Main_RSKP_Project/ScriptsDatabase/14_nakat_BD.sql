@@ -15,6 +15,7 @@ CREATE TABLE [dbo].[Table_Team](
 ) ON [PRIMARY]
 GO
 
+
 INSERT INTO Table_Team (Members, Status, Discipline) VALUES ('Shramov', 'TimLid', 'Backend') 
 INSERT INTO Table_Team (Members, Status, Discipline) VALUES ('Kutanin', 'Member', 'DataBase')
 INSERT INTO Table_Team (Members, Status, Discipline) VALUES ('Kiselev', 'Member', 'JavaS')
@@ -26,3 +27,4 @@ CREATE PROCEDURE Output_test
 SELECT * FROM Table_Team
 WHERE Members = @Text OR Status = @Text OR Discipline = @Text;
 GO
+
