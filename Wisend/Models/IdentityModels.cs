@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -29,5 +30,9 @@ namespace Wisend.Models
         {
             return new ApplicationDbContext();
         }
+    }
+    static public bool CreateAccount(char Login, char Password)
+    {
+        return false;
     }
 }
