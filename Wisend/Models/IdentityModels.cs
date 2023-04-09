@@ -1,9 +1,13 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
+using System.Data.SqlClient;
+using System.IO;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.Ajax.Utilities;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Wisend.Properties;
 
 namespace Wisend.Models
 {
@@ -25,14 +29,10 @@ namespace Wisend.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
     }
-    static public bool CreateAccount(char Login, char Password)
-    {
-        return false;
-    }
+    
 }

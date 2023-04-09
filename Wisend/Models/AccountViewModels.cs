@@ -1,5 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.SqlServer.Server;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data.SqlClient;
+using System.Diagnostics;
+using System.IO;
+using Wisend.Properties;
 
 namespace Wisend.Models
 {
@@ -9,7 +15,6 @@ namespace Wisend.Models
         [Display(Name = "Адрес электронной почты")]
         public string Email { get; set; }
     }
-
     public class ExternalLoginListViewModel
     {
         public string ReturnUrl { get; set; }
@@ -49,10 +54,12 @@ namespace Wisend.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Адрес электронной почты")]
-        [EmailAddress]
-        public string Email { get; set; }
-
+        [Display(Name = "Логин")]
+        public string Login { get; set; }
+        //[Required]
+        //[Display(Name = "Адрес электронной почты")]
+        //[EmailAddress]
+        //public string Email { get; set; }
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Пароль")]
@@ -64,11 +71,72 @@ namespace Wisend.Models
 
     public class RegisterViewModel
     {
+
+        static public bool CreateAccount(string Login, string Email, string Password)
+        {
+            try
+            {
+                string ConnectionString = BDTypes.StringConnection;
+                string sqlExpression = BDTypes.CreateAccount;
+                using (SqlConnection connect = new SqlConnection(ConnectionString))
+                {
+                    connect.Open();
+                    SqlCommand command = new SqlCommand(sqlExpression, connect);
+                    command.CommandType = System.Data.CommandType.StoredProcedure;
+                    string [] sqlparam = new string []
+                    {
+                  Login,
+                  Email,
+                  Password,
+                    };
+                    string[] ParamInSql = new string[]
+                        {
+                        "@Login",
+                        "@Email",
+                        "@Password",
+                        };
+                    for (int i = 0; i < sqlparam.Length; i++)
+                    {
+                        SqlParameter NameParamm = new SqlParameter
+                        {
+                            ParameterName = ParamInSql[i],
+                            Value = sqlparam[i]
+                        };
+                        command.Parameters.Add(NameParamm);
+                    }
+                    var reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                }
+            }
+            catch (System.Exception ex)
+            {
+                //Создание файла, в котором будет храниться ошибка данного метода
+                //string path = "Wisend\\log.txt";
+                //StreamReader sr = new StreamReader("Wisend\\log.txt");
+                //ex = new Exception(sr.ReadLine());
+                //while (ex != null)
+                //{
+                //    ex = new Exception(sr.ReadLine());
+                //}
+                //sr.Close();
+                return false;
+            }
+        }
+        [Required]
+        [Display(Name ="Логин")]
+        public string Login { get; set; }
         [Required]
         [EmailAddress]
         [Display(Name = "Адрес электронной почты")]
         public string Email { get; set; }
-
         [Required]
         [StringLength(100, ErrorMessage = "Значение {0} должно содержать не менее {2} символов.", MinimumLength = 6)]
         [DataType(DataType.Password)]
