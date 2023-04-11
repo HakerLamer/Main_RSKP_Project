@@ -172,7 +172,7 @@ namespace Wisend.Controllers
             //Появление этого сообщения означает наличие ошибки; повторное отображение формы
             // return View(model);
             var user = new ApplicationUser { UserName = model.Login, Email = model.Email };
-            bool result = RegisterViewModel.CreateAccount(model.Login, model.Email, model.Password); //Надо ли заносить параметр в метод как Подтверждение пароля как указано в AccountViewModel.cs
+            bool result = RegisterViewModel.CreateAccount(model.Login, model.PhoneNumber, model.Password); //Надо ли заносить параметр в метод как Подтверждение пароля как указано в AccountViewModel.cs
             if (!result)
             {
                 return View(model);
@@ -227,10 +227,10 @@ namespace Wisend.Controllers
 
                 // Дополнительные сведения о включении подтверждения учетной записи и сброса пароля см. на странице https://go.microsoft.com/fwlink/?LinkID=320771.
                 // Отправка сообщения электронной почты с этой ссылкой
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "Сброс пароля", "Сбросьте ваш пароль, щелкнув <a href=\"" + callbackUrl + "\">здесь</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
+                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
+                 await UserManager.SendEmailAsync(user.Id, "Сброс пароля", "Сбросьте ваш пароль, щелкнув <a href=\"" + callbackUrl + "\">здесь</a>");
+                 return RedirectToAction("ForgotPasswordConfirmation", "Account");
             }
 
             // Появление этого сообщения означает наличие ошибки; повторное отображение формы

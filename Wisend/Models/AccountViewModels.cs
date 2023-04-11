@@ -12,6 +12,10 @@ namespace Wisend.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
+        [Phone]
+        [Display(Name ="Мобильный телефон")]
+        public string PhoneNumber { get; set;}
+        [Required]
         [Display(Name = "Адрес электронной почты")]
         public string Email { get; set; }
     }
@@ -47,6 +51,10 @@ namespace Wisend.Models
     public class ForgotViewModel
     {
         [Required]
+        [Phone]
+        [Display(Name ="Мобильный телефон")]
+        public string PhoneNumber { get; set;}
+        [Required]
         [Display(Name = "Адрес электронной почты")]
         public string Email { get; set; }
     }
@@ -56,10 +64,6 @@ namespace Wisend.Models
         [Required]
         [Display(Name = "Логин")]
         public string Login { get; set; }
-        //[Required]
-        //[Display(Name = "Адрес электронной почты")]
-        //[EmailAddress]
-        //public string Email { get; set; }
         [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Пароль")]
@@ -72,7 +76,7 @@ namespace Wisend.Models
     public class RegisterViewModel
     {
 
-        static public bool CreateAccount(string Login, string Email, string Password)
+        static public bool CreateAccount(string Login, string Phone_number, string Password)
         {
             try
             {
@@ -86,13 +90,13 @@ namespace Wisend.Models
                     string [] sqlparam = new string []
                     {
                   Login,
-                  Email,
+                  Phone_number,
                   Password,
                     };
                     string[] ParamInSql = new string[]
                         {
                         "@Login",
-                        "@Email",
+                        "@Phone_number",
                         "@Password",
                         };
                     for (int i = 0; i < sqlparam.Length; i++)
@@ -134,6 +138,10 @@ namespace Wisend.Models
         [Display(Name ="Логин")]
         public string Login { get; set; }
         [Required]
+        [Phone]
+        [Display(Name = "Мобильный телефон")]
+        public string PhoneNumber { get; set; }
+        [Required]
         [EmailAddress]
         [Display(Name = "Адрес электронной почты")]
         public string Email { get; set; }
@@ -152,10 +160,13 @@ namespace Wisend.Models
     public class ResetPasswordViewModel
     {
         [Required]
+        [Phone]
+        [Display(Name ="Мобильный телефон")]
+        public string PhoneNumber { get; set;}
+        [Required]
         [EmailAddress]
         [Display(Name = "Адрес электронной почты")]
         public string Email { get; set; }
-
         [Required]
         [StringLength(100, ErrorMessage = "Значение {0} должно содержать не менее {2} символов.", MinimumLength = 6)]
         [DataType(DataType.Password)]
@@ -172,6 +183,10 @@ namespace Wisend.Models
 
     public class ForgotPasswordViewModel
     {
+        [Required]
+        [Phone]
+        [Display(Name ="Мобильный телефон")]
+        public string PhoneNimber { get; set;}
         [Required]
         [EmailAddress]
         [Display(Name = "Почта")]
