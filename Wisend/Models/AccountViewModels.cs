@@ -120,17 +120,9 @@ namespace Wisend.Models
 
                 }
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                //Создание файла, в котором будет храниться ошибка данного метода
-                //string path = "Wisend\\log.txt";
-                //StreamReader sr = new StreamReader("Wisend\\log.txt");
-                //ex = new Exception(sr.ReadLine());
-                //while (ex != null)
-                //{
-                //    ex = new Exception(sr.ReadLine());
-                //}
-                //sr.Close();
+                File.AppendAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "logs", "models.log"), $"[{DateTime.Now}] {ex.Message}\n");
                 return false;
             }
         }
